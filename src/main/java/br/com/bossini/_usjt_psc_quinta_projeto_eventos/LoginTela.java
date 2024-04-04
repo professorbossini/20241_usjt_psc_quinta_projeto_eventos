@@ -4,6 +4,8 @@
  */
 package br.com.bossini._usjt_psc_quinta_projeto_eventos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rodrigo
@@ -13,8 +15,10 @@ public class LoginTela extends javax.swing.JFrame {
     /**
      * Creates new form LoginTela
      */
+    //construtor
     public LoginTela() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -39,8 +43,18 @@ public class LoginTela extends javax.swing.JFrame {
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Digite sua senha"));
 
         cancelarButton.setText("Cancelar");
+        cancelarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarButtonActionPerformed(evt);
+            }
+        });
 
         okButton.setText("OK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okButtonActionPerformed(evt);
+            }
+        });
 
         criarContaButton.setText("Criar conta");
 
@@ -78,6 +92,26 @@ public class LoginTela extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+        String login = loginTextField.getText();
+        String senha = new String(senhaPasswordField.getPassword());
+        if(login.equals("admin") && senha.equals("admin")){
+            JOptionPane.showMessageDialog(null, "Bem vindo");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Par usuário/senha inválido");
+        }
+//        if (login.equals("")){
+//            JOptionPane.showMessageDialog(null, "Campo vazio");
+//            loginTextField.requestFocus();
+//        }
+//        else if()
+    }//GEN-LAST:event_okButtonActionPerformed
+
+    private void cancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarButtonActionPerformed
+        dispose();
+    }//GEN-LAST:event_cancelarButtonActionPerformed
 
     /**
      * @param args the command line arguments
