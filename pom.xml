@@ -11,4 +11,12 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>br.com.bossini._usjt_psc_quinta_projeto_eventos.App</exec.mainClass>
     </properties>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+    </dependencies>
 </project>
