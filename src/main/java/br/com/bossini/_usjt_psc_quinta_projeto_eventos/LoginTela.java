@@ -94,19 +94,22 @@ public class LoginTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        String login = loginTextField.getText();
-        String senha = new String(senhaPasswordField.getPassword());
-        if(login.equals("admin") && senha.equals("admin")){
-            JOptionPane.showMessageDialog(null, "Bem vindo");
+        try{
+            String login = loginTextField.getText();
+            String senha = new String(senhaPasswordField.getPassword());
+            var usuario = new Usuario(login, senha);
+            var dao = new UsuarioDAO();
+            if(dao.existe(usuario)){
+                JOptionPane.showMessageDialog(null, "Bem vindo");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Par usuário/senha inválido");
+            }
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Par usuário/senha inválido");
+        catch(Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Tente novamente mais tarde");
         }
-//        if (login.equals("")){
-//            JOptionPane.showMessageDialog(null, "Campo vazio");
-//            loginTextField.requestFocus();
-//        }
-//        else if()
     }//GEN-LAST:event_okButtonActionPerformed
 
     private void cancelarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarButtonActionPerformed

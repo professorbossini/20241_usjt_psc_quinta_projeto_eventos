@@ -5,6 +5,7 @@ CREATE TABLE tb_usuario_psc_quinta(
   login VARCHAR(200) NOT NULL,
   senha VARCHAR(200) NOT NULL
 );
+SELECT * FROM tb_usuario_psc_quinta;
 --cadastrar um usuário
 INSERT INTO tb_usuario_psc_quinta
 (login, senha) VALUES

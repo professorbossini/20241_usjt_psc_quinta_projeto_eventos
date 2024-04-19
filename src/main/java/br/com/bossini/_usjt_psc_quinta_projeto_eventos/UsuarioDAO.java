@@ -12,7 +12,7 @@ public class UsuarioDAO {
     //tipo de retorno, nome, lista de parametros, corpo
     boolean existe(Usuario u) throws Exception {
         //1. Especificar o comando SQL (SELECT)
-        var sql = "SELECT * FROM tb_usuario_usjt_psc_quinta WHERE login = ? AND  senha = ?";
+        var sql = "SELECT * FROM tb_usuario_psc_quinta WHERE login = ? AND  senha = ?";
         //2. Estabelecer uma conexão com o banco
         var conexao = new ConnectionFactory().conectar();
         //3. Preparar o comando
