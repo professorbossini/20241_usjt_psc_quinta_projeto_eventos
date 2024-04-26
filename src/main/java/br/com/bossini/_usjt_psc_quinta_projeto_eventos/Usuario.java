@@ -9,9 +9,9 @@ package br.com.bossini._usjt_psc_quinta_projeto_eventos;
  * @author rodrigo
  */
 public class Usuario {
-    int codigo;
-    String login;
-    String senha;
+    private int codigo;
+    private String login;
+    private String senha;
     
     //construtor padrão
     Usuario(){}
@@ -20,4 +20,15 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
     }
+    
+    public String getLogin(){
+        return login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+    
+    
+    
 }
