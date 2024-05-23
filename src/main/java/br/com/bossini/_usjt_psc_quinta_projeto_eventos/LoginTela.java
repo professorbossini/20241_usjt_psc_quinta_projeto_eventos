@@ -99,8 +99,21 @@ public class LoginTela extends javax.swing.JFrame {
             String senha = new String(senhaPasswordField.getPassword());
             var usuario = new Usuario(login, senha);
             var dao = new UsuarioDAO();
-            if(dao.existe(usuario)){
+            if(dao.existe(usuario) != null){
                 JOptionPane.showMessageDialog(null, "Bem vindo");
+                if(usuario.getTipo() == 1){
+                   //admin
+                   //construir uma AdminTela
+                   var adminTela = new AdminTela();
+                   //tornar a tela visível
+                   //descartar a tela atual(dispose)
+                   dispose();
+                }
+                else{
+                    //comum
+                    var comumTela = new ComumTela();
+                    dispose();
+                }
             }
             else{
                 JOptionPane.showMessageDialog(null, "Par usuário/senha inválido");

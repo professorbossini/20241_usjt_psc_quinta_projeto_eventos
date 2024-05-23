@@ -11,11 +11,11 @@ import java.sql.DriverManager;
  * @author rodrigo
  */
 public class ConnectionFactory {
-    String host = "pg-33ad0904-professorbossini.a.aivencloud.com";
-    String port = "12956";
-    String user = "avnadmin";
-    String password = "AVNS_AYz38n0bB2kOyCL0TAF";
-    String database = "defaultdb";
+    String host = "localhost";
+    String port = "5432";
+    String user = "postgres";
+    String password = "123456";
+    String database = "20241_usjt_psc_quinta";
     
     //4 partes: tipo de retorno, nome, lista de parâmetros e corpo
     Connection conectar() throws Exception{

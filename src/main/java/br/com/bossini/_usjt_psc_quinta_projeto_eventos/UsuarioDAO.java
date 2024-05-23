@@ -10,7 +10,7 @@ package br.com.bossini._usjt_psc_quinta_projeto_eventos;
  */
 public class UsuarioDAO {
     //tipo de retorno, nome, lista de parametros, corpo
-    boolean existe(Usuario u) throws Exception {
+    Usuario existe(Usuario u) throws Exception {
         //1. Especificar o comando SQL (SELECT)
         var sql = "SELECT * FROM tb_usuario_psc_quinta WHERE login = ? AND  senha = ?";
         //2. Estabelecer uma conexão com o banco
@@ -24,6 +24,13 @@ public class UsuarioDAO {
         var rs = ps.executeQuery();
         //6. Tratar o resultado e devolver true ou false
         var usuarioExiste = rs.next();
+        if(usuarioExiste){
+            var tipo = rs.getInt("tipo");
+            u.setTipo(tipo);
+        }
+        else{
+            u = null;
+        }
         //7. Fechar a conexão
         rs.close();
         ps.close();
@@ -32,7 +39,7 @@ public class UsuarioDAO {
 //            return true;
 //        return false;
 //        return usuarioExiste ? true : false;
-          return usuarioExiste;
+          return u;
     }
             
     //cláusula catch or declare
