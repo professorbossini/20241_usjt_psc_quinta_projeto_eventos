@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.bossini._usjt_psc_quinta_projeto_eventos;
+package br.com.bossini._usjt_psc_quinta_projeto_eventos.bd;
+
+import br.com.bossini._usjt_psc_quinta_projeto_eventos.modelo.Usuario;
 
 /**
  *
@@ -10,7 +12,7 @@ package br.com.bossini._usjt_psc_quinta_projeto_eventos;
  */
 public class UsuarioDAO {
     //tipo de retorno, nome, lista de parametros, corpo
-    Usuario existe(Usuario u) throws Exception {
+    public Usuario existe(Usuario u) throws Exception {
         //1. Especificar o comando SQL (SELECT)
         var sql = "SELECT * FROM tb_usuario_psc_quinta WHERE login = ? AND  senha = ?";
         //2. Estabelecer uma conexão com o banco
@@ -43,7 +45,7 @@ public class UsuarioDAO {
     }
             
     //cláusula catch or declare
-    void cadastrar(Usuario u)  throws Exception{
+    public void cadastrar(Usuario u)  throws Exception{
         //1. Especificar o comando SQL (INSERT)
         var sql = "INSERT INTO tb_usuario_psc_quinta(login, senha) VALUES(?, ?)";
         //2. Estabelecer uma conexão com o banco

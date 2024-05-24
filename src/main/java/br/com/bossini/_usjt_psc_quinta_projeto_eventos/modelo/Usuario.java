@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.bossini._usjt_psc_quinta_projeto_eventos;
+package br.com.bossini._usjt_psc_quinta_projeto_eventos.modelo;
 
 /**
  *
@@ -15,9 +15,9 @@ public class Usuario {
     private int tipo;
     
     //construtor padrão
-    Usuario(){}
+    public Usuario(){}
     
-    Usuario(String login, String senha){
+    public Usuario(String login, String senha){
         this.login = login;
         this.senha = senha;
     }

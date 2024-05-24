@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.com.bossini._usjt_psc_quinta_projeto_eventos;
+package br.com.bossini._usjt_psc_quinta_projeto_eventos.telas;
 
+import br.com.bossini._usjt_psc_quinta_projeto_eventos.modelo.Usuario;
+import br.com.bossini._usjt_psc_quinta_projeto_eventos.bd.UsuarioDAO;
 import javax.swing.JOptionPane;
 
 /**
